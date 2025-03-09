@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>   
+
+<form action="/edit/<%= allPost.id %>?_method=PATCH" method="POST">
+    <label for="title">Blog Title</label><br>
+    <input type="text" id="title" name="title" value="<%= allPost.title %>"><br>
+    
+    <label for="content">Content:</label><br>
+    <input type="text" id="content" name="content" value="<%= allPost.content %>"><br>
+    
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" name="author" value="<%= allPost.author %>"><br>
+    
+    <input type="submit" value="Submit" class="button">
+</form>
+
+<%- include('partials/footer.ejs') %>     

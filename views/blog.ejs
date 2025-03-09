@@ -1,0 +1,84 @@
+<%- include('partials/header.ejs') %>   
+
+<div class="p-4 p-md-5 pt-2 rounded text-body-emphasis bg-body-secondary">
+  <h2> <span class="introSpan">Daily Planet:</span> A Leading Source of Information in the Digital Age</h2>
+  <p>The Daily Planet is a renowned and long-standing newspaper based in India, now embracing the digital revolution with its online article and blog platform. With decades of journalistic integrity and a strong legacy of hard-hitting news reporting, the Daily Planet continues to stay relevant in today’s fast-paced, online world. It serves millions of readers with timely articles, engaging blogs, and in-depth reporting across various topics.</p>  
+</div>
+
+<div class="row">
+  <div class="col-md-8 pe-0">
+    <article>
+      <% allPosts.forEach(function(post) { %>
+        <div>
+          <h2><%= post.title %></h2>
+          <p><em>By <%= post.author %> on <%= post.date %></em></p>
+          <p><%= post.content %></p>
+          <a href="/edit/<%= post.id %>" class="button mx-2">Edit</a>
+          <a href="/<%= post.id %>" class="button">Delete</a>
+        </div>
+        <hr />
+      <% }) %>
+      <h2 class="mt-5"> Create Your Own Blog</h2>
+      <p>Blogging is one of the most powerful ways to share your voice with the world. Whether you're looking to express your personal ideas, share expertise in a particular field, or even start a business, a blog is the perfect tool to do so. But how do you begin?</p>    
+      <a href="/new" class="button mx-2"> Create New Blog </a>
+    </article>  
+  </div>
+  
+
+  <div class="col-md-4 mt-3">
+  <div class="position-sticky" style="top: 2rem;">
+     <div class="p-4 mb-3 pe-5 bg-body-tertiary rounded">
+      <h4 class="fst-italic">Superman's Legacy: </h4>
+      <p class="mb-0">“I may be from another world, but my mission is to protect this one,” Superman said in a recent interview. “Humanity is capable of greatness. My role is to guide you, not to dictate your future. The power is in your hands. I’m just here to help.”</p>
+      </div> 
+
+      <div>
+        <h4 class="fst-italic">Recent posts</h4>
+        <ul class="list-unstyled">
+          <li>
+            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+              <div class="col-lg-8">
+                <h6 class="mb-0"> Rise of the Bat</h6>
+                <small class="text-body-secondary">March 4, 2025</small>
+              </div>
+            </a>
+          </li>
+          <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Life on MARS?</h6>
+                  <small class="text-body-secondary">March 3, 2025</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Wayne Foundation fund Dent's Campaign</h6>
+                  <small class="text-body-secondary">March 1, 2025</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">City of Atlantis Found?</h6>
+                  <small class="text-body-secondary">February 28, 2025</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Resurgence</h6>
+                  <small class="text-body-secondary">March 6, 2025</small>
+                </div>
+              </a>
+            </li>     
+        </ul>    
+      </div>
+  </div>
+  </div>
+</div>
+
+  <%- include('partials/footer.ejs') %>    
